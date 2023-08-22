@@ -8,7 +8,7 @@ public class StatsService {
             sumSales = (int) (sales[i] + sumSales);
         }
 
-            return sumSales;
+        return sumSales;
     }
 
     public int averageAmount(long[] sales) {
@@ -42,9 +42,10 @@ public class StatsService {
 
     public int underAverageAmount(long[] sales) {
         int underAverageAmount = 0; // количество месяцев, в которых продажи были ниже среднего
+        long averageAmount = averageAmount(sales);
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < averageAmount(sales)) {
+            if (sales[i] < averageAmount) {
                 underAverageAmount = underAverageAmount + 1;
             }
         }
@@ -54,9 +55,10 @@ public class StatsService {
 
     public int upperAverageAmount(long[] sales) {
         int upperAverageAmount = 0; // количество месяцев, в которых продажи были выше среднего
+        long averageAmount = averageAmount(sales);
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > averageAmount(sales)) {
+            if (sales[i] > averageAmount) {
                 upperAverageAmount = upperAverageAmount + 1;
             }
         }
